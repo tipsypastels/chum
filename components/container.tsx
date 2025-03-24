@@ -6,7 +6,7 @@ interface ContainerProps {
 
 export default function Container(props: ContainerProps) {
   return (
-    <div class="flex h-screen items-center justify-center">
+    <div class="flex flex-col h-screen items-center justify-center">
       {props.children}
     </div>
   );
