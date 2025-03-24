@@ -1,3 +1,10 @@
+import ChatBox from "../components/chat_box.tsx";
+import Container from "../components/container.tsx";
+
 export default function Home() {
-  return <div>hi</div>;
+  return (
+    <Container>
+      <ChatBox title="Chat" />
+    </Container>
+  );
 }
