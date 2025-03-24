@@ -1,4 +1,4 @@
-import ChatBoxInput from "../islands/chat_box_input.tsx";
+import ChatBoxInput from "../islands/ChatBoxInput.tsx";
 
 interface ChatBoxProps {
   title: string;

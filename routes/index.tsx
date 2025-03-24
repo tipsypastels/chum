@@ -1,5 +1,5 @@
-import ChatBox from "../components/chat_box.tsx";
-import Container from "../components/container.tsx";
+import ChatBox from "../components/ChatBox.tsx";
+import Container from "../components/Container.tsx";
 
 export default function Home() {
   return (
