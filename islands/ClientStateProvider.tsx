@@ -1,16 +1,17 @@
 import { ComponentChildren, createContext } from "preact";
 import { Dispatch, useReducer } from "preact/hooks";
+import { Me } from "../library/types.d.ts";
 
 export const ClientState = createContext<[ClientState, Dispatch<ClientAction>]>(
   [{}, () => {}],
 );
 
 export interface ClientState {
-  username?: string;
+  user?: Me;
 }
 
 export type ClientAction =
-  | { type: "sign-in"; username: string }
+  | { type: "sign-in"; user: Me }
   | { type: "sign-out" };
 
 export interface ClientStateProviderProps {
@@ -30,10 +31,10 @@ export default function ClientStateProvider(props: ClientStateProviderProps) {
 function reducer(state: ClientState, action: ClientAction): ClientState {
   switch (action.type) {
     case "sign-in": {
-      return { ...state, username: action.username };
+      return { ...state, user: action.user };
     }
     case "sign-out": {
-      return { ...state, username: undefined };
+      return { ...state, user: undefined };
     }
   }
 }

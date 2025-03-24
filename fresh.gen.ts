@@ -4,24 +4,26 @@
 
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
+import * as $auth from "./routes/auth.ts";
 import * as $index from "./routes/index.tsx";
 import * as $ws from "./routes/ws.ts";
-import * as $AuthTemp from "./islands/AuthTemp.tsx";
 import * as $ChatBoxInput from "./islands/ChatBoxInput.tsx";
 import * as $ClientStateProvider from "./islands/ClientStateProvider.tsx";
+import * as $SignInWrapper from "./islands/SignInWrapper.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
+    "./routes/auth.ts": $auth,
     "./routes/index.tsx": $index,
     "./routes/ws.ts": $ws,
   },
   islands: {
-    "./islands/AuthTemp.tsx": $AuthTemp,
     "./islands/ChatBoxInput.tsx": $ChatBoxInput,
     "./islands/ClientStateProvider.tsx": $ClientStateProvider,
+    "./islands/SignInWrapper.tsx": $SignInWrapper,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

@@ -4,3 +4,9 @@ export interface Message {
   username?: string;
   ipAddr?: string;
 }
+
+export interface Me {
+  username: string;
+  token: string;
+  ws: WebSocket;
+}

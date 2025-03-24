@@ -1,4 +1,5 @@
 import ChatBoxInput from "../islands/ChatBoxInput.tsx";
+import SignInWrapper from "../islands/SignInWrapper.tsx";
 
 interface ChatBoxProps {
   title: string;
@@ -11,13 +12,15 @@ export default function ChatBox(props: ChatBoxProps) {
         {props.title}
       </div>
 
-      <div class="grow border-y-2 border-y-slate-800">
-        hi
-      </div>
+      <SignInWrapper>
+        <div class="grow border-y-2 border-y-slate-800">
+          hi
+        </div>
 
-      <div class="p-4">
-        <ChatBoxInput />
-      </div>
+        <div class="p-4">
+          <ChatBoxInput />
+        </div>
+      </SignInWrapper>
     </div>
   );
 }

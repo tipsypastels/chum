@@ -1,12 +1,8 @@
 import { JSX } from "preact";
-import { useContext } from "preact/hooks";
 import { useSignal } from "@preact/signals";
-import { ClientState } from "./ClientStateProvider.tsx";
 
 export default function ChatBoxInput() {
   const input = useSignal("");
-  const [state] = useContext(ClientState);
-  const canSubmit = input.value && state.username;
 
   function onSubmit(e: JSX.TargetedSubmitEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -21,7 +17,7 @@ export default function ChatBoxInput() {
         onInput={(e) => input.value = e.currentTarget.value}
       />
 
-      <button type="submit" disabled={!canSubmit}>
+      <button type="submit" disabled={!input.value}>
         Send
       </button>
     </form>
